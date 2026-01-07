@@ -32,14 +32,16 @@ def get_input():
   choices = [stack.get_name()[0] for stack in stacks]
   while True:
     for i in range(len(stacks)):
-      name = stacks[i].get_name()
-      letter = choices[i]
-      print("Enter " + str(letter) + " for " + str(name))
-    user_input = input("").lower() 
-    if user_input in choices[i]:
+      print("Enter " + choices[i] + " for " + stacks[i].get_name())
+
+    user_input = input("").upper()
+
+    if user_input in choices:
       for i in range(len(stacks)):
         if user_input == choices[i]:
           return stacks[i]
+    else:
+      print("Invalid choice. Try again.")
 
 num_user_moves = 0 
 while right_stack.get_size() != num_disks:
@@ -55,8 +57,8 @@ while right_stack.get_size() != num_disks:
     
     if from_stack.is_empty():
       print("\n\nInvalid Move. Try Again")
-    elif to_stack.is_empty() or from_stack.peek().get_value < from_stack.peek() is True:
-      disk = from_stack.pop().get_value()
+    elif to_stack.is_empty() or from_stack.peek() < to_stack.peek():
+      disk = from_stack.pop()
       to_stack.push(disk)
       num_user_moves += 1
       break
