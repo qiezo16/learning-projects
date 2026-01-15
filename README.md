@@ -27,9 +27,9 @@ The backing array is initialized with `None` to clearly represent empty buckets.
 
 ---
 
-## Design Decisions
+### Design Decisions
 
-### Backing Array Initialization
+#### Backing Array Initialization
 
 The backing array is pre-filled with `None` values rather than being left empty or filled with placeholder data.
 
@@ -45,7 +45,7 @@ This distinction allows for:
 
 ---
 
-## Collision Handling
+### Collision Handling
 
 When two keys hash to the same index, the hash map resolves collisions using **linear probing**:
 
@@ -57,7 +57,7 @@ Both insertion and retrieval follow the same probing sequence, ensuring consiste
 
 ---
 
-## Goals Moving Forward
+### Goals Moving Forward
 
 - Add resizing based on load factor
 - Improve hash distribution
@@ -66,7 +66,7 @@ Both insertion and retrieval follow the same probing sequence, ensuring consiste
 
 ---
 
-## Why This Project Exists
+### Why This Project Exists
 
 This project is meant as a learning exercise to understand:
 - How hash functions work
@@ -74,3 +74,15 @@ This project is meant as a learning exercise to understand:
 - How collisions affect performance
 - What tradeoffs exist in hash map design
 
+## Call Building My Own Call Stack
+A Python project that simulates a call stack to demonstrate how recursion works. Each function call is represented as an execution context, stored in a stack, and popped in LIFO order to calculate the final result.
+
+ ### Features
+
+- Manually simulates recursion for summing numbers from n down to 1
+- Prints the stack state at each step
+- Demonstrates how the call stack grows and shrinks
+
+### Complexity
+- Time: O(n)
+- Space: O(n)
